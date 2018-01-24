@@ -1,0 +1,24 @@
+{
+  "name": "myswellcast",
+  "version": "1.0.0",
+  "description": "myswellcast services personalized surf reports",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "handlebars": "^4.0.11",
+    "cheerio": "^1.0.0-rc.2",
+    "fs": "0.0.1-security",
+    "nodemailer": "^4.4.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}
