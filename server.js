@@ -152,8 +152,6 @@ app.post('/quotes', (req, res) => {
         sbWindDirection: forecastsData[1].windDirection,
       };
       
-      console.log(`${process.env.EMAIL}`);
-      
       var htmlToSend = template(replacements);
 
       let transporter = nodemailer.createTransport({
