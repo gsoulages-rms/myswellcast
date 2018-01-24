@@ -5,6 +5,10 @@ const path = require('path');
 const mkdirp = require('mkdirp');
 const nodemailer = require('nodemailer');
 const handlebars = require('handlebars');
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').load();
+  require('dotenv').config()
+}
 
 const express = require('express');
 const bodyParser= require('body-parser');
@@ -100,6 +104,7 @@ app.post('/quotes', (req, res) => {
           if (forecastsData[0].date <= anHourAgo || forecastsData[1].date <= anHourAgo) {
             console.log('its been longer than an hour, make a new request');
             getBouy(['Harvest, CA', 'WEST SANTA BARBARA']);
+            sendEmail(forecastsData);
           } else {
             console.log('its been less than an hour, dispay contents from file');
             sendEmail(forecastsData);
@@ -149,24 +154,24 @@ app.post('/quotes', (req, res) => {
         sbWindDirection: forecastsData[1].windDirection,
       };
       
-      console.log(replacements);
+      console.log(`${process.env.EMAIL}`);
       
       var htmlToSend = template(replacements);
 
       let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-              user: '',
-              pass: ''
+              user: `${process.env.EMAIL}`,
+              pass: `${process.env.PASSWORD}`
           }
       });
       
       const mailOptions = {
         from: {
           name: 'Swellcast',
-          address: ''
+          address: `${process.env.EMAIL}`
         },
-        to: '', // list of receivers
+        to: `${process.env.EMAILTOGREGORY}, ${process.env.EMAILTOCHRISTIAN}`, // list of receivers
         subject: 'Santa Claus is firing!', // Subject line
         html : htmlToSend
       };

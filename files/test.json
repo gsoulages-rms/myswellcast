@@ -1,0 +1,22 @@
+[
+  {
+    "bouyName": "Harvest, CA",
+    "swellHeight": "8.2",
+    "period": "13",
+    "swellDirection": "299",
+    "windSpeed": "---",
+    "windDirection": "---",
+    "waterTemp": "56.3",
+    "date": 1516768037088
+  },
+  {
+    "bouyName": "WEST SANTA BARBARA",
+    "swellHeight": "---",
+    "period": "---",
+    "swellDirection": "---",
+    "windSpeed": "14-16",
+    "windDirection": "310",
+    "waterTemp": "57.2",
+    "date": 1516768037227
+  }
+]
