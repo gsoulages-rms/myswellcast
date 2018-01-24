@@ -23,7 +23,8 @@
     "handlebars": "^4.0.11",
     "mkdirp": "^0.5.1",
     "nodemailer": "^4.4.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "nodemon": "^1.14.11"
